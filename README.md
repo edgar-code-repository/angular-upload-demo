@@ -7,3 +7,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ![angular+bootstrap](images/angular+bootstrap.jpg)
 
 --------------------------------------------------------------------------------------------------------
+
+## Simple file upload
+
+![file-upload](screenshots/upload-form.png)
+
+--------------------------------------------------------------------------------------------------------
