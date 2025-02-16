@@ -1,0 +1,17 @@
+input[type="file"] {
+    position: relative;
+    width: 500px;
+    height: 32px;
+    box-sizing: border-box;
+    line-height: 16px;
+    padding: 8px 32px 8px 8px;
+    color: rgba(0,0,0,.3);
+    background-color: #fff;
+    text-overflow: ellipsis;    
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;    
+    content: "\1F5BF";
+    margin-top: 8px;
+    right: 8px;    
+  }

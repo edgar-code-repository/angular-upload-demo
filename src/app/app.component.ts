@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
 
+import { UploadService } from './services/upload.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    title = 'angular-upload-demo';
+    message = '';
     selectedFile: File | null = null;
+
+    constructor(private uploadService: UploadService) {}
 
     onFileSelected(event: Event): void {
       const input = event.target as HTMLInputElement;
@@ -18,12 +22,24 @@ export class AppComponent {
 
     uploadFile(): void {
       if (!this.selectedFile) {
+          this.message = "A file must be selected!!!";
           return;
+      } else {
+        let observableUpload = this.uploadService.uploadClientsFile(this.selectedFile);
+        observableUpload.subscribe (
+            (response) => {
+              console.log("Response: " , response);
+              this.message = "File uploaded successfully!!!";
+            },
+            (error) => {
+              console.log("Error: " , error.message);
+              this.message = "A file must be selected!!!";
+            }
+        );
       }
-      const formData = new FormData();
-      formData.append('file', this.selectedFile);
+    
       
-    }  
+    }     
 
 }
 

@@ -26,13 +26,12 @@
                     </div>
                     <div class="card-body">
                         <form class="user">
-                            <div class="form-group">
-                                <input type="file" class="form-control" (change)="onFileSelected($event)">
-                            </div>
-                            &nbsp;
-                            <button (click)="uploadFile()" class="btn btn-primary btn-user">
+                            <input type="file" placeholder="Choose a file..." (change)="onFileSelected($event)">                            <br><br>
+                            <button type="button" (click)="uploadFile()" class="btn btn-primary btn-user">
                                 Upload File
-                            </button>                              
+                            </button>      
+                            <br><br><br>
+                            {{ message }}                        
                         </form>                      
                     </div>
                 </div>
